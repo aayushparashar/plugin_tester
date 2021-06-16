@@ -1,0 +1,1785 @@
+{
+  "storage" : "model.espresso.weights",
+  "properties" : {
+
+  },
+  "format_version" : 200,
+  "layers" : [
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "d_cnv_0_conv_1_1_dilat_bn_1_output",
+      "K" : 4,
+      "blob_biases" : 1,
+      "name" : "d_cnv_0_conv_1_1_dilat_conv_dil_n_n_1",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 4,
+      "bottom" : "input1",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 3,
+      "dilation_x" : 3,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1,
+      "dilation_y" : 3,
+      "blob_weights_f16" : 3
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 5
+      },
+      "top" : "d_cnv_0_conv_1_1_dilat_prelu_1_output",
+      "type" : "activation",
+      "name" : "d_cnv_0_conv_1_1_dilat_prelu_1",
+      "bottom" : "d_cnv_0_conv_1_1_dilat_bn_1_output"
+    },
+    {
+      "weights" : {
+
+      },
+      "top" : "d_frmrg_0_concat_merge_concat_3_output",
+      "type" : "concat",
+      "name" : "d_frmrg_0_concat_merge_concat_3",
+      "bottom" : "d_cnv_0_conv_1_1_dilat_prelu_1_output,input1"
+    },
+    {
+      "name" : "d_frmrg_0_concat_merge_bn_3",
+      "bottom" : "d_frmrg_0_concat_merge_concat_3_output",
+      "weights" : {
+
+      },
+      "top" : "d_frmrg_0_concat_merge_bn_3_output",
+      "C" : 8,
+      "blob_batchnorm_params" : 7,
+      "type" : "batchnorm"
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 9
+      },
+      "top" : "d_frmrg_0_concat_merge_prelu_3_output",
+      "type" : "activation",
+      "name" : "d_frmrg_0_concat_merge_prelu_3",
+      "bottom" : "d_frmrg_0_concat_merge_bn_3_output"
+    },
+    {
+      "pad_value" : 0,
+      "average_count_exclude_padding" : 1,
+      "top_shape_style" : 0,
+      "avg_or_max" : 1,
+      "stride_x" : 4,
+      "pad_mode" : 1,
+      "stride_y" : 4,
+      "pad_t" : 0,
+      "weights" : {
+
+      },
+      "size_y" : 2,
+      "type" : "pool",
+      "pad_r" : 0,
+      "pad_b" : 0,
+      "size_x" : 2,
+      "pad_fill_mode" : 0,
+      "bottom" : "d_frmrg_0_concat_merge_prelu_3_output",
+      "pad_l" : 0,
+      "name" : "d_smpl_0_max_pooling_max_pool_4",
+      "top" : "d_smpl_0_max_pooling_max_pool_4_output"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "d_cnv_1_conv_1_n_n_1_conv_1_n_7_output",
+      "K" : 8,
+      "blob_biases" : 11,
+      "name" : "d_cnv_1_conv_1_n_n_1_conv_1_n_7",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 32,
+      "bottom" : "d_smpl_0_max_pooling_max_pool_4_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 5,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 13
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "d_cnv_1_conv_1_n_n_1_bn_7_output",
+      "K" : 32,
+      "blob_biases" : 15,
+      "name" : "d_cnv_1_conv_1_n_n_1_conv_n_1_7",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 32,
+      "bottom" : "d_cnv_1_conv_1_n_n_1_conv_1_n_7_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 1,
+      "pad_value" : 0,
+      "Ny" : 5,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 17
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 19
+      },
+      "top" : "d_cnv_1_conv_1_n_n_1_prelu_7_output",
+      "type" : "activation",
+      "name" : "d_cnv_1_conv_1_n_n_1_prelu_7",
+      "bottom" : "d_cnv_1_conv_1_n_n_1_bn_7_output"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "d_cnv_1_conv_n_n_bn_9_output",
+      "K" : 32,
+      "blob_biases" : 21,
+      "name" : "d_cnv_1_conv_n_n_conv_n_n_9",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 16,
+      "bottom" : "d_cnv_1_conv_1_n_n_1_prelu_7_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 3,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 23
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 25
+      },
+      "top" : "d_cnv_1_conv_n_n_prelu_9_output",
+      "type" : "activation",
+      "name" : "d_cnv_1_conv_n_n_prelu_9",
+      "bottom" : "d_cnv_1_conv_n_n_bn_9_output"
+    },
+    {
+      "weights" : {
+
+      },
+      "top" : "d_mrgcnv_1_0_concat_merge_concat_10_output",
+      "type" : "concat",
+      "name" : "d_mrgcnv_1_0_concat_merge_concat_10",
+      "bottom" : "d_cnv_1_conv_n_n_prelu_9_output,d_cnv_1_conv_1_n_n_1_prelu_7_output"
+    },
+    {
+      "name" : "d_mrgcnv_1_0_concat_merge_bn_10",
+      "bottom" : "d_mrgcnv_1_0_concat_merge_concat_10_output",
+      "weights" : {
+
+      },
+      "top" : "d_mrgcnv_1_0_concat_merge_bn_10_output",
+      "C" : 48,
+      "blob_batchnorm_params" : 27,
+      "type" : "batchnorm"
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 29
+      },
+      "top" : "d_mrgcnv_1_0_concat_merge_prelu_10_output",
+      "type" : "activation",
+      "name" : "d_mrgcnv_1_0_concat_merge_prelu_10",
+      "bottom" : "d_mrgcnv_1_0_concat_merge_bn_10_output"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "d_cnv_1_conv_1_n_n_1_conv_1_n_11_output",
+      "K" : 48,
+      "blob_biases" : 31,
+      "name" : "d_cnv_1_conv_1_n_n_1_conv_1_n_11",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 32,
+      "bottom" : "d_mrgcnv_1_0_concat_merge_prelu_10_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 2,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 33
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "d_cnv_1_conv_1_n_n_1_bn_11_output",
+      "K" : 32,
+      "blob_biases" : 35,
+      "name" : "d_cnv_1_conv_1_n_n_1_conv_n_1_11",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 32,
+      "bottom" : "d_cnv_1_conv_1_n_n_1_conv_1_n_11_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 1,
+      "pad_value" : 0,
+      "Ny" : 2,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 37
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 39
+      },
+      "top" : "d_cnv_1_conv_1_n_n_1_prelu_11_output",
+      "type" : "activation",
+      "name" : "d_cnv_1_conv_1_n_n_1_prelu_11",
+      "bottom" : "d_cnv_1_conv_1_n_n_1_bn_11_output"
+    },
+    {
+      "weights" : {
+
+      },
+      "top" : "d_mrgcnv_1_0_concat_merge_concat_12_output",
+      "type" : "concat",
+      "name" : "d_mrgcnv_1_0_concat_merge_concat_12",
+      "bottom" : "d_cnv_1_conv_1_n_n_1_prelu_11_output,d_mrgcnv_1_0_concat_merge_prelu_10_output"
+    },
+    {
+      "name" : "d_mrgcnv_1_0_concat_merge_bn_12",
+      "bottom" : "d_mrgcnv_1_0_concat_merge_concat_12_output",
+      "weights" : {
+
+      },
+      "top" : "d_mrgcnv_1_0_concat_merge_bn_12_output",
+      "C" : 80,
+      "blob_batchnorm_params" : 41,
+      "type" : "batchnorm"
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 43
+      },
+      "top" : "d_mrgcnv_1_0_concat_merge_prelu_12_output",
+      "type" : "activation",
+      "name" : "d_mrgcnv_1_0_concat_merge_prelu_12",
+      "bottom" : "d_mrgcnv_1_0_concat_merge_bn_12_output"
+    },
+    {
+      "pad_value" : 0,
+      "average_count_exclude_padding" : 1,
+      "top_shape_style" : 0,
+      "avg_or_max" : 1,
+      "stride_x" : 2,
+      "pad_mode" : 1,
+      "stride_y" : 2,
+      "pad_t" : 0,
+      "weights" : {
+
+      },
+      "size_y" : 4,
+      "type" : "pool",
+      "pad_r" : 0,
+      "pad_b" : 0,
+      "size_x" : 4,
+      "pad_fill_mode" : 0,
+      "bottom" : "d_mrgcnv_1_0_concat_merge_prelu_12_output",
+      "pad_l" : 0,
+      "name" : "d_smpl_1_max_pooling_max_pool_16",
+      "top" : "d_smpl_1_max_pooling_max_pool_16_output"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "d_cnv_2_conv_1_1_dilat_bn_23_output",
+      "K" : 80,
+      "blob_biases" : 45,
+      "name" : "d_cnv_2_conv_1_1_dilat_conv_dil_n_n_23",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 32,
+      "bottom" : "d_smpl_1_max_pooling_max_pool_16_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 3,
+      "dilation_x" : 3,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1,
+      "dilation_y" : 3,
+      "blob_weights_f16" : 47
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 49
+      },
+      "top" : "d_cnv_2_conv_1_1_dilat_prelu_23_output",
+      "type" : "activation",
+      "name" : "d_cnv_2_conv_1_1_dilat_prelu_23",
+      "bottom" : "d_cnv_2_conv_1_1_dilat_bn_23_output"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "d_cnv_2_conv_1_n_n_1_conv_1_n_25_output",
+      "K" : 32,
+      "blob_biases" : 51,
+      "name" : "d_cnv_2_conv_1_n_n_1_conv_1_n_25",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 32,
+      "bottom" : "d_cnv_2_conv_1_1_dilat_prelu_23_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 3,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 53
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "d_cnv_2_conv_1_n_n_1_bn_25_output",
+      "K" : 32,
+      "blob_biases" : 55,
+      "name" : "d_cnv_2_conv_1_n_n_1_conv_n_1_25",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 32,
+      "bottom" : "d_cnv_2_conv_1_n_n_1_conv_1_n_25_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 57
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 59
+      },
+      "top" : "d_cnv_2_conv_1_n_n_1_prelu_25_output",
+      "type" : "activation",
+      "name" : "d_cnv_2_conv_1_n_n_1_prelu_25",
+      "bottom" : "d_cnv_2_conv_1_n_n_1_bn_25_output"
+    },
+    {
+      "weights" : {
+
+      },
+      "top" : "d_mrgcnv_2_0_concat_merge_concat_26_output",
+      "type" : "concat",
+      "name" : "d_mrgcnv_2_0_concat_merge_concat_26",
+      "bottom" : "d_cnv_2_conv_1_n_n_1_prelu_25_output,d_cnv_2_conv_1_1_dilat_prelu_23_output"
+    },
+    {
+      "name" : "d_mrgcnv_2_0_concat_merge_bn_26",
+      "bottom" : "d_mrgcnv_2_0_concat_merge_concat_26_output",
+      "weights" : {
+
+      },
+      "top" : "d_mrgcnv_2_0_concat_merge_bn_26_output",
+      "C" : 64,
+      "blob_batchnorm_params" : 61,
+      "type" : "batchnorm"
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 63
+      },
+      "top" : "d_mrgcnv_2_0_concat_merge_prelu_26_output",
+      "type" : "activation",
+      "name" : "d_mrgcnv_2_0_concat_merge_prelu_26",
+      "bottom" : "d_mrgcnv_2_0_concat_merge_bn_26_output"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "d_smpl_2_conv_n_n_down_bn_28_output",
+      "K" : 64,
+      "blob_biases" : 65,
+      "stride_x" : 2,
+      "name" : "d_smpl_2_conv_n_n_down_conv_n_n_28",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "stride_y" : 2,
+      "has_biases" : 1,
+      "C" : 8,
+      "bottom" : "d_mrgcnv_2_0_concat_merge_prelu_26_output",
+      "weights" : {
+
+      },
+      "Nx" : 2,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 2,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 67
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 69
+      },
+      "top" : "d_smpl_2_conv_n_n_down_prelu_28_output",
+      "type" : "activation",
+      "name" : "d_smpl_2_conv_n_n_down_prelu_28",
+      "bottom" : "d_smpl_2_conv_n_n_down_bn_28_output"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "d_smpl_3_conv_n_n_down_bn_40_output",
+      "K" : 8,
+      "blob_biases" : 71,
+      "stride_x" : 4,
+      "name" : "d_smpl_3_conv_n_n_down_conv_n_n_40",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "stride_y" : 4,
+      "has_biases" : 1,
+      "C" : 8,
+      "bottom" : "d_smpl_2_conv_n_n_down_prelu_28_output",
+      "weights" : {
+
+      },
+      "Nx" : 2,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 2,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 73
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 75
+      },
+      "top" : "d_smpl_3_conv_n_n_down_prelu_40_output",
+      "type" : "activation",
+      "name" : "d_smpl_3_conv_n_n_down_prelu_40",
+      "bottom" : "d_smpl_3_conv_n_n_down_bn_40_output"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "d_cnv_4_conv_n_n_bn_45_output",
+      "K" : 8,
+      "blob_biases" : 77,
+      "name" : "d_cnv_4_conv_n_n_conv_n_n_45",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 16,
+      "bottom" : "d_smpl_3_conv_n_n_down_prelu_40_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 3,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 79
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 81
+      },
+      "top" : "d_cnv_4_conv_n_n_prelu_45_output",
+      "type" : "activation",
+      "name" : "d_cnv_4_conv_n_n_prelu_45",
+      "bottom" : "d_cnv_4_conv_n_n_bn_45_output"
+    },
+    {
+      "weights" : {
+
+      },
+      "top" : "d_mrgcnv_4_0_concat_merge_concat_46_output",
+      "type" : "concat",
+      "name" : "d_mrgcnv_4_0_concat_merge_concat_46",
+      "bottom" : "d_cnv_4_conv_n_n_prelu_45_output,d_smpl_3_conv_n_n_down_prelu_40_output"
+    },
+    {
+      "name" : "d_mrgcnv_4_0_concat_merge_bn_46",
+      "bottom" : "d_mrgcnv_4_0_concat_merge_concat_46_output",
+      "weights" : {
+
+      },
+      "top" : "d_mrgcnv_4_0_concat_merge_bn_46_output",
+      "C" : 24,
+      "blob_batchnorm_params" : 83,
+      "type" : "batchnorm"
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 85
+      },
+      "top" : "d_mrgcnv_4_0_concat_merge_prelu_46_output",
+      "type" : "activation",
+      "name" : "d_mrgcnv_4_0_concat_merge_prelu_46",
+      "bottom" : "d_mrgcnv_4_0_concat_merge_bn_46_output"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "d_cnv_4_conv_n_n_bn_49_output",
+      "K" : 24,
+      "blob_biases" : 87,
+      "name" : "d_cnv_4_conv_n_n_conv_n_n_49",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 8,
+      "bottom" : "d_mrgcnv_4_0_concat_merge_prelu_46_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 3,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 89
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 91
+      },
+      "top" : "d_cnv_4_conv_n_n_prelu_49_output",
+      "type" : "activation",
+      "name" : "d_cnv_4_conv_n_n_prelu_49",
+      "bottom" : "d_cnv_4_conv_n_n_bn_49_output"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "btl_conv_5_conv_1_1_bn_53_output",
+      "K" : 8,
+      "blob_biases" : 93,
+      "name" : "btl_conv_5_conv_1_1_conv_1_1_53",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 8,
+      "bottom" : "d_cnv_4_conv_n_n_prelu_49_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 95
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 97
+      },
+      "top" : "btl_conv_5_conv_1_1_prelu_53_output",
+      "type" : "activation",
+      "name" : "btl_conv_5_conv_1_1_prelu_53",
+      "bottom" : "btl_conv_5_conv_1_1_bn_53_output"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "btl_conv_5_conv_n_n_bn_61_output",
+      "K" : 8,
+      "blob_biases" : 99,
+      "name" : "btl_conv_5_conv_n_n_conv_n_n_61",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 16,
+      "bottom" : "btl_conv_5_conv_1_1_prelu_53_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 2,
+      "pad_value" : 0,
+      "Ny" : 2,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 101
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 103
+      },
+      "top" : "btl_conv_5_conv_n_n_prelu_61_output",
+      "type" : "activation",
+      "name" : "btl_conv_5_conv_n_n_prelu_61",
+      "bottom" : "btl_conv_5_conv_n_n_bn_61_output"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "u_smpl_0_inv_con_n_n_conv_inv_n_n_64_chan_adj_output",
+      "K" : 16,
+      "blob_biases" : 105,
+      "name" : "u_smpl_0_inv_con_n_n_conv_inv_n_n_64_chan_adj",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 4,
+      "bottom" : "btl_conv_5_conv_n_n_prelu_61_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 107
+    },
+    {
+      "bottom" : "u_smpl_0_inv_con_n_n_conv_inv_n_n_64_chan_adj_output",
+      "scaling_factor_y" : 4,
+      "weights" : {
+
+      },
+      "mode" : 0,
+      "top" : "u_smpl_0_inv_con_n_n_conv_inv_n_n_64_upsample_output",
+      "scaling_factor_x" : 4,
+      "type" : "upsample",
+      "name" : "u_smpl_0_inv_con_n_n_conv_inv_n_n_64_upsample"
+    },
+    {
+      "name" : "u_smpl_0_inv_con_n_n_bn_64",
+      "bottom" : "u_smpl_0_inv_con_n_n_conv_inv_n_n_64_upsample_output",
+      "weights" : {
+
+      },
+      "top" : "u_smpl_0_inv_con_n_n_bn_64_output",
+      "C" : 4,
+      "blob_batchnorm_params" : 109,
+      "type" : "batchnorm"
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 111
+      },
+      "top" : "u_smpl_0_inv_con_n_n_prelu_64_output",
+      "type" : "activation",
+      "name" : "u_smpl_0_inv_con_n_n_prelu_64",
+      "bottom" : "u_smpl_0_inv_con_n_n_bn_64_output"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "d_mrgcnv_2_0_concat_merge_prelu_26_concat_adj_65_output",
+      "K" : 64,
+      "blob_biases" : 113,
+      "stride_x" : 2,
+      "name" : "d_mrgcnv_2_0_concat_merge_prelu_26_concat_adj_65",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "stride_y" : 2,
+      "has_biases" : 1,
+      "C" : 64,
+      "bottom" : "d_mrgcnv_2_0_concat_merge_prelu_26_output",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 115
+    },
+    {
+      "weights" : {
+
+      },
+      "top" : "u_brmrg_0_concat_merge_concat_65_output",
+      "type" : "concat",
+      "name" : "u_brmrg_0_concat_merge_concat_65",
+      "bottom" : "u_smpl_0_inv_con_n_n_prelu_64_output,d_mrgcnv_2_0_concat_merge_prelu_26_concat_adj_65_output"
+    },
+    {
+      "name" : "u_brmrg_0_concat_merge_bn_65",
+      "bottom" : "u_brmrg_0_concat_merge_concat_65_output",
+      "weights" : {
+
+      },
+      "top" : "u_brmrg_0_concat_merge_bn_65_output",
+      "C" : 68,
+      "blob_batchnorm_params" : 117,
+      "type" : "batchnorm"
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 119
+      },
+      "top" : "u_brmrg_0_concat_merge_prelu_65_output",
+      "type" : "activation",
+      "name" : "u_brmrg_0_concat_merge_prelu_65",
+      "bottom" : "u_brmrg_0_concat_merge_bn_65_output"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "u_conv_0_conv_1_1_dilat_bn_68_output",
+      "K" : 68,
+      "blob_biases" : 121,
+      "name" : "u_conv_0_conv_1_1_dilat_conv_dil_n_n_68",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 32,
+      "bottom" : "u_brmrg_0_concat_merge_prelu_65_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 5,
+      "dilation_x" : 3,
+      "pad_value" : 0,
+      "Ny" : 5,
+      "n_parallel" : 1,
+      "dilation_y" : 3,
+      "blob_weights_f16" : 123
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 125
+      },
+      "top" : "u_conv_0_conv_1_1_dilat_prelu_68_output",
+      "type" : "activation",
+      "name" : "u_conv_0_conv_1_1_dilat_prelu_68",
+      "bottom" : "u_conv_0_conv_1_1_dilat_bn_68_output"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "u_conv_0_conv_1_1_dilat_bn_70_output",
+      "K" : 32,
+      "blob_biases" : 127,
+      "name" : "u_conv_0_conv_1_1_dilat_conv_dil_n_n_70",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 16,
+      "bottom" : "u_conv_0_conv_1_1_dilat_prelu_68_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 5,
+      "dilation_x" : 2,
+      "pad_value" : 0,
+      "Ny" : 5,
+      "n_parallel" : 1,
+      "dilation_y" : 2,
+      "blob_weights_f16" : 129
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 131
+      },
+      "top" : "u_conv_0_conv_1_1_dilat_prelu_70_output",
+      "type" : "activation",
+      "name" : "u_conv_0_conv_1_1_dilat_prelu_70",
+      "bottom" : "u_conv_0_conv_1_1_dilat_bn_70_output"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "u_conv_0_conv_1_1_bn_72_output",
+      "K" : 16,
+      "blob_biases" : 133,
+      "name" : "u_conv_0_conv_1_1_conv_1_1_72",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 8,
+      "bottom" : "u_conv_0_conv_1_1_dilat_prelu_70_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 135
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 137
+      },
+      "top" : "u_conv_0_conv_1_1_prelu_72_output",
+      "type" : "activation",
+      "name" : "u_conv_0_conv_1_1_prelu_72",
+      "bottom" : "u_conv_0_conv_1_1_bn_72_output"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "u_conv_0_conv_1_1_dilat_prelu_70_add_chan_adj_73_output",
+      "K" : 16,
+      "blob_biases" : 139,
+      "name" : "u_conv_0_conv_1_1_dilat_prelu_70_add_chan_adj_73",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 8,
+      "bottom" : "u_conv_0_conv_1_1_dilat_prelu_70_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 141
+    },
+    {
+      "alpha" : 1,
+      "bottom" : "u_conv_0_conv_1_1_prelu_72_output,u_conv_0_conv_1_1_dilat_prelu_70_add_chan_adj_73_output",
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "top" : "u_mrg_cnv_0_0_add_merge_add_73_output",
+      "type" : "elementwise",
+      "name" : "u_mrg_cnv_0_0_add_merge_add_73",
+      "beta" : 0
+    },
+    {
+      "name" : "u_mrg_cnv_0_0_add_merge_bn_73",
+      "bottom" : "u_mrg_cnv_0_0_add_merge_add_73_output",
+      "weights" : {
+
+      },
+      "top" : "u_mrg_cnv_0_0_add_merge_bn_73_output",
+      "C" : 8,
+      "blob_batchnorm_params" : 143,
+      "type" : "batchnorm"
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 145
+      },
+      "top" : "u_mrg_cnv_0_0_add_merge_prelu_73_output",
+      "type" : "activation",
+      "name" : "u_mrg_cnv_0_0_add_merge_prelu_73",
+      "bottom" : "u_mrg_cnv_0_0_add_merge_bn_73_output"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "u_smpl_1_inv_con_n_n_conv_inv_n_n_77_chan_adj_output",
+      "K" : 8,
+      "blob_biases" : 147,
+      "name" : "u_smpl_1_inv_con_n_n_conv_inv_n_n_77_chan_adj",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 16,
+      "bottom" : "u_mrg_cnv_0_0_add_merge_prelu_73_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 149
+    },
+    {
+      "bottom" : "u_smpl_1_inv_con_n_n_conv_inv_n_n_77_chan_adj_output",
+      "scaling_factor_y" : 2,
+      "weights" : {
+
+      },
+      "mode" : 0,
+      "top" : "u_smpl_1_inv_con_n_n_conv_inv_n_n_77_upsample_output",
+      "scaling_factor_x" : 2,
+      "type" : "upsample",
+      "name" : "u_smpl_1_inv_con_n_n_conv_inv_n_n_77_upsample"
+    },
+    {
+      "name" : "u_smpl_1_inv_con_n_n_bn_77",
+      "bottom" : "u_smpl_1_inv_con_n_n_conv_inv_n_n_77_upsample_output",
+      "weights" : {
+
+      },
+      "top" : "u_smpl_1_inv_con_n_n_bn_77_output",
+      "C" : 16,
+      "blob_batchnorm_params" : 151,
+      "type" : "batchnorm"
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 153
+      },
+      "top" : "u_smpl_1_inv_con_n_n_prelu_77_output",
+      "type" : "activation",
+      "name" : "u_smpl_1_inv_con_n_n_prelu_77",
+      "bottom" : "u_smpl_1_inv_con_n_n_bn_77_output"
+    },
+    {
+      "weights" : {
+
+      },
+      "top" : "u_brmrg_1_concat_merge_concat_78_output",
+      "type" : "concat",
+      "name" : "u_brmrg_1_concat_merge_concat_78",
+      "bottom" : "u_smpl_1_inv_con_n_n_prelu_77_output,d_cnv_2_conv_1_n_n_1_prelu_25_output"
+    },
+    {
+      "name" : "u_brmrg_1_concat_merge_bn_78",
+      "bottom" : "u_brmrg_1_concat_merge_concat_78_output",
+      "weights" : {
+
+      },
+      "top" : "u_brmrg_1_concat_merge_bn_78_output",
+      "C" : 48,
+      "blob_batchnorm_params" : 155,
+      "type" : "batchnorm"
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 157
+      },
+      "top" : "u_brmrg_1_concat_merge_prelu_78_output",
+      "type" : "activation",
+      "name" : "u_brmrg_1_concat_merge_prelu_78",
+      "bottom" : "u_brmrg_1_concat_merge_bn_78_output"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "u_conv_1_conv_1_n_n_1_conv_1_n_81_output",
+      "K" : 48,
+      "blob_biases" : 159,
+      "name" : "u_conv_1_conv_1_n_n_1_conv_1_n_81",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 16,
+      "bottom" : "u_brmrg_1_concat_merge_prelu_78_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 3,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 161
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "u_conv_1_conv_1_n_n_1_bn_81_output",
+      "K" : 16,
+      "blob_biases" : 163,
+      "name" : "u_conv_1_conv_1_n_n_1_conv_n_1_81",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 16,
+      "bottom" : "u_conv_1_conv_1_n_n_1_conv_1_n_81_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 165
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 167
+      },
+      "top" : "u_conv_1_conv_1_n_n_1_prelu_81_output",
+      "type" : "activation",
+      "name" : "u_conv_1_conv_1_n_n_1_prelu_81",
+      "bottom" : "u_conv_1_conv_1_n_n_1_bn_81_output"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "u_conv_1_conv_1_1_bn_83_output",
+      "K" : 16,
+      "blob_biases" : 169,
+      "name" : "u_conv_1_conv_1_1_conv_1_1_83",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 32,
+      "bottom" : "u_conv_1_conv_1_n_n_1_prelu_81_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 171
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 173
+      },
+      "top" : "u_conv_1_conv_1_1_prelu_83_output",
+      "type" : "activation",
+      "name" : "u_conv_1_conv_1_1_prelu_83",
+      "bottom" : "u_conv_1_conv_1_1_bn_83_output"
+    },
+    {
+      "weights" : {
+
+      },
+      "top" : "u_mrg_cnv_1_0_concat_merge_concat_84_output",
+      "type" : "concat",
+      "name" : "u_mrg_cnv_1_0_concat_merge_concat_84",
+      "bottom" : "u_conv_1_conv_1_1_prelu_83_output,u_conv_1_conv_1_n_n_1_prelu_81_output"
+    },
+    {
+      "name" : "u_mrg_cnv_1_0_concat_merge_bn_84",
+      "bottom" : "u_mrg_cnv_1_0_concat_merge_concat_84_output",
+      "weights" : {
+
+      },
+      "top" : "u_mrg_cnv_1_0_concat_merge_bn_84_output",
+      "C" : 48,
+      "blob_batchnorm_params" : 175,
+      "type" : "batchnorm"
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 177
+      },
+      "top" : "u_mrg_cnv_1_0_concat_merge_prelu_84_output",
+      "type" : "activation",
+      "name" : "u_mrg_cnv_1_0_concat_merge_prelu_84",
+      "bottom" : "u_mrg_cnv_1_0_concat_merge_bn_84_output"
+    },
+    {
+      "bottom" : "u_mrg_cnv_1_0_concat_merge_prelu_84_output",
+      "scaling_factor_y" : 4,
+      "weights" : {
+
+      },
+      "mode" : 0,
+      "top" : "u_smpl_3_upsample_upsample_103_output",
+      "scaling_factor_x" : 4,
+      "type" : "upsample",
+      "name" : "u_smpl_3_upsample_upsample_103"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "u_conv_3_conv_1_1_dilat_bn_105_output",
+      "K" : 48,
+      "blob_biases" : 179,
+      "name" : "u_conv_3_conv_1_1_dilat_conv_dil_n_n_105",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 16,
+      "bottom" : "u_smpl_3_upsample_upsample_103_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 5,
+      "dilation_x" : 2,
+      "pad_value" : 0,
+      "Ny" : 5,
+      "n_parallel" : 1,
+      "dilation_y" : 2,
+      "blob_weights_f16" : 181
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 183
+      },
+      "top" : "u_conv_3_conv_1_1_dilat_prelu_105_output",
+      "type" : "activation",
+      "name" : "u_conv_3_conv_1_1_dilat_prelu_105",
+      "bottom" : "u_conv_3_conv_1_1_dilat_bn_105_output"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "u_conv_3_conv_1_n_n_1_conv_1_n_109_output",
+      "K" : 16,
+      "blob_biases" : 185,
+      "name" : "u_conv_3_conv_1_n_n_1_conv_1_n_109",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 8,
+      "bottom" : "u_conv_3_conv_1_1_dilat_prelu_105_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 2,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 187
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "u_conv_3_conv_1_n_n_1_bn_109_output",
+      "K" : 8,
+      "blob_biases" : 189,
+      "name" : "u_conv_3_conv_1_n_n_1_conv_n_1_109",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 8,
+      "bottom" : "u_conv_3_conv_1_n_n_1_conv_1_n_109_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 1,
+      "pad_value" : 0,
+      "Ny" : 2,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 191
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 193
+      },
+      "top" : "u_conv_3_conv_1_n_n_1_prelu_109_output",
+      "type" : "activation",
+      "name" : "u_conv_3_conv_1_n_n_1_prelu_109",
+      "bottom" : "u_conv_3_conv_1_n_n_1_bn_109_output"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "u_conv_3_conv_1_1_dilat_prelu_105_add_chan_adj_110_output",
+      "K" : 16,
+      "blob_biases" : 195,
+      "name" : "u_conv_3_conv_1_1_dilat_prelu_105_add_chan_adj_110",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 8,
+      "bottom" : "u_conv_3_conv_1_1_dilat_prelu_105_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 197
+    },
+    {
+      "alpha" : 1,
+      "bottom" : "u_conv_3_conv_1_n_n_1_prelu_109_output,u_conv_3_conv_1_1_dilat_prelu_105_add_chan_adj_110_output",
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "top" : "u_mrg_cnv_3_0_add_merge_add_110_output",
+      "type" : "elementwise",
+      "name" : "u_mrg_cnv_3_0_add_merge_add_110",
+      "beta" : 0
+    },
+    {
+      "name" : "u_mrg_cnv_3_0_add_merge_bn_110",
+      "bottom" : "u_mrg_cnv_3_0_add_merge_add_110_output",
+      "weights" : {
+
+      },
+      "top" : "u_mrg_cnv_3_0_add_merge_bn_110_output",
+      "C" : 8,
+      "blob_batchnorm_params" : 199,
+      "type" : "batchnorm"
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 201
+      },
+      "top" : "u_mrg_cnv_3_0_add_merge_prelu_110_output",
+      "type" : "activation",
+      "name" : "u_mrg_cnv_3_0_add_merge_prelu_110",
+      "bottom" : "u_mrg_cnv_3_0_add_merge_bn_110_output"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "u_conv_3_conv_1_n_n_1_conv_1_n_111_output",
+      "K" : 8,
+      "blob_biases" : 203,
+      "name" : "u_conv_3_conv_1_n_n_1_conv_1_n_111",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 16,
+      "bottom" : "u_mrg_cnv_3_0_add_merge_prelu_110_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 2,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 205
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "u_conv_3_conv_1_n_n_1_bn_111_output",
+      "K" : 16,
+      "blob_biases" : 207,
+      "name" : "u_conv_3_conv_1_n_n_1_conv_n_1_111",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 16,
+      "bottom" : "u_conv_3_conv_1_n_n_1_conv_1_n_111_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 1,
+      "pad_value" : 0,
+      "Ny" : 2,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 209
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 211
+      },
+      "top" : "u_conv_3_conv_1_n_n_1_prelu_111_output",
+      "type" : "activation",
+      "name" : "u_conv_3_conv_1_n_n_1_prelu_111",
+      "bottom" : "u_conv_3_conv_1_n_n_1_bn_111_output"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "u_conv_3_conv_1_n_n_1_prelu_111_add_chan_adj_112_output",
+      "K" : 16,
+      "blob_biases" : 213,
+      "name" : "u_conv_3_conv_1_n_n_1_prelu_111_add_chan_adj_112",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 8,
+      "bottom" : "u_conv_3_conv_1_n_n_1_prelu_111_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 215
+    },
+    {
+      "alpha" : 1,
+      "bottom" : "u_conv_3_conv_1_n_n_1_prelu_111_add_chan_adj_112_output,u_mrg_cnv_3_0_add_merge_prelu_110_output",
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "top" : "u_mrg_cnv_3_0_add_merge_add_112_output",
+      "type" : "elementwise",
+      "name" : "u_mrg_cnv_3_0_add_merge_add_112",
+      "beta" : 0
+    },
+    {
+      "name" : "u_mrg_cnv_3_0_add_merge_bn_112",
+      "bottom" : "u_mrg_cnv_3_0_add_merge_add_112_output",
+      "weights" : {
+
+      },
+      "top" : "u_mrg_cnv_3_0_add_merge_bn_112_output",
+      "C" : 8,
+      "blob_batchnorm_params" : 217,
+      "type" : "batchnorm"
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 219
+      },
+      "top" : "u_mrg_cnv_3_0_add_merge_prelu_112_output",
+      "type" : "activation",
+      "name" : "u_mrg_cnv_3_0_add_merge_prelu_112",
+      "bottom" : "u_mrg_cnv_3_0_add_merge_bn_112_output"
+    },
+    {
+      "weights" : {
+
+      },
+      "top" : "u_frmrg_3_concat_merge_concat_115_output",
+      "type" : "concat",
+      "name" : "u_frmrg_3_concat_merge_concat_115",
+      "bottom" : "u_mrg_cnv_3_0_add_merge_prelu_112_output,u_smpl_3_upsample_upsample_103_output"
+    },
+    {
+      "name" : "u_frmrg_3_concat_merge_bn_115",
+      "bottom" : "u_frmrg_3_concat_merge_concat_115_output",
+      "weights" : {
+
+      },
+      "top" : "u_frmrg_3_concat_merge_bn_115_output",
+      "C" : 56,
+      "blob_batchnorm_params" : 221,
+      "type" : "batchnorm"
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 223
+      },
+      "top" : "u_frmrg_3_concat_merge_prelu_115_output",
+      "type" : "activation",
+      "name" : "u_frmrg_3_concat_merge_prelu_115",
+      "bottom" : "u_frmrg_3_concat_merge_bn_115_output"
+    },
+    {
+      "bottom" : "u_frmrg_3_concat_merge_prelu_115_output",
+      "scaling_factor_y" : 2,
+      "weights" : {
+
+      },
+      "mode" : 0,
+      "top" : "u_smpl_4_upsample_upsample_116_output",
+      "scaling_factor_x" : 2,
+      "type" : "upsample",
+      "name" : "u_smpl_4_upsample_upsample_116"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "u_smpl_4_upsample_upsample_116_add_chan_adj_117_output",
+      "K" : 56,
+      "blob_biases" : 225,
+      "name" : "u_smpl_4_upsample_upsample_116_add_chan_adj_117",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 4,
+      "bottom" : "u_smpl_4_upsample_upsample_116_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 227
+    },
+    {
+      "alpha" : 1,
+      "bottom" : "u_smpl_4_upsample_upsample_116_add_chan_adj_117_output,d_cnv_0_conv_1_1_dilat_prelu_1_output",
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "top" : "u_brmrg_4_add_merge_add_117_output",
+      "type" : "elementwise",
+      "name" : "u_brmrg_4_add_merge_add_117",
+      "beta" : 0
+    },
+    {
+      "name" : "u_brmrg_4_add_merge_bn_117",
+      "bottom" : "u_brmrg_4_add_merge_add_117_output",
+      "weights" : {
+
+      },
+      "top" : "u_brmrg_4_add_merge_bn_117_output",
+      "C" : 4,
+      "blob_batchnorm_params" : 229,
+      "type" : "batchnorm"
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 231
+      },
+      "top" : "u_brmrg_4_add_merge_prelu_117_output",
+      "type" : "activation",
+      "name" : "u_brmrg_4_add_merge_prelu_117",
+      "bottom" : "u_brmrg_4_add_merge_bn_117_output"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "u_conv_4_conv_1_n_n_1_conv_1_n_118_output",
+      "K" : 4,
+      "blob_biases" : 233,
+      "name" : "u_conv_4_conv_1_n_n_1_conv_1_n_118",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 16,
+      "bottom" : "u_brmrg_4_add_merge_prelu_117_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 3,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 235
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "u_conv_4_conv_1_n_n_1_bn_118_output",
+      "K" : 16,
+      "blob_biases" : 237,
+      "name" : "u_conv_4_conv_1_n_n_1_conv_n_1_118",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 16,
+      "bottom" : "u_conv_4_conv_1_n_n_1_conv_1_n_118_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 239
+    },
+    {
+      "mode" : 4,
+      "weights" : {
+        "params_prelu" : 241
+      },
+      "top" : "u_conv_4_conv_1_n_n_1_prelu_118_output",
+      "type" : "activation",
+      "name" : "u_conv_4_conv_1_n_n_1_prelu_118",
+      "bottom" : "u_conv_4_conv_1_n_n_1_bn_118_output"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "output1",
+      "K" : 16,
+      "blob_biases" : 243,
+      "name" : "channel_adj_conv_1_1",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 2,
+      "bottom" : "u_conv_4_conv_1_n_n_1_prelu_118_output",
+      "weights" : {
+
+      },
+      "pad_mode" : 1,
+      "Nx" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 245
+    }
+  ]
+}

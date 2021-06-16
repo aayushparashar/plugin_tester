@@ -1,0 +1,316 @@
+{
+  "layer_shapes" : {
+    "bags_mask-out_convolution_output" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "h" : 256
+    },
+    "bags_mask-up_relu_1_1_output" : {
+      "k" : 24,
+      "w" : 64,
+      "n" : 1,
+      "h" : 64
+    },
+    "bags_mask-down_relu_6_0_output" : {
+      "k" : 96,
+      "w" : 4,
+      "n" : 1,
+      "h" : 4
+    },
+    "bags_mask-concatenate_5_output" : {
+      "k" : 160,
+      "w" : 8,
+      "n" : 1,
+      "h" : 8
+    },
+    "bags_mask-down_relu_1_1_output" : {
+      "k" : 24,
+      "w" : 128,
+      "n" : 1,
+      "h" : 128
+    },
+    "bags_mask-up_relu_2_1_output" : {
+      "k" : 32,
+      "w" : 32,
+      "n" : 1,
+      "h" : 32
+    },
+    "output1" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "h" : 256
+    },
+    "bags_mask-upsampling_5_output" : {
+      "k" : 80,
+      "w" : 8,
+      "n" : 1,
+      "h" : 8
+    },
+    "bags_mask-down_relu_0_1_output" : {
+      "k" : 16,
+      "w" : 256,
+      "n" : 1,
+      "h" : 256
+    },
+    "bags_mask-upsampling_1_output" : {
+      "k" : 24,
+      "w" : 128,
+      "n" : 1,
+      "h" : 128
+    },
+    "bags_mask-pool_3_output" : {
+      "k" : 48,
+      "w" : 16,
+      "n" : 1,
+      "h" : 16
+    },
+    "bags_mask-up_relu_3_1_output" : {
+      "k" : 48,
+      "w" : 16,
+      "n" : 1,
+      "h" : 16
+    },
+    "bags_mask-upsampling_3_output" : {
+      "k" : 48,
+      "w" : 32,
+      "n" : 1,
+      "h" : 32
+    },
+    "bags_mask-concatenate_2_output" : {
+      "k" : 64,
+      "w" : 64,
+      "n" : 1,
+      "h" : 64
+    },
+    "bags_mask-up_relu_4_1_output" : {
+      "k" : 64,
+      "w" : 8,
+      "n" : 1,
+      "h" : 8
+    },
+    "bags_mask-down_relu_5_0_output" : {
+      "k" : 80,
+      "w" : 8,
+      "n" : 1,
+      "h" : 8
+    },
+    "bags_mask-pool_2_output" : {
+      "k" : 32,
+      "w" : 32,
+      "n" : 1,
+      "h" : 32
+    },
+    "bags_mask-up_relu_5_1_output" : {
+      "k" : 80,
+      "w" : 4,
+      "n" : 1,
+      "h" : 4
+    },
+    "bags_mask-concatenate_6_output" : {
+      "k" : 192,
+      "w" : 4,
+      "n" : 1,
+      "h" : 4
+    },
+    "bags_mask-down_relu_4_0_output" : {
+      "k" : 64,
+      "w" : 16,
+      "n" : 1,
+      "h" : 16
+    },
+    "bags_mask-up_relu_0_0_output" : {
+      "k" : 16,
+      "w" : 128,
+      "n" : 1,
+      "h" : 128
+    },
+    "bags_mask-pool_1_output" : {
+      "k" : 24,
+      "w" : 64,
+      "n" : 1,
+      "h" : 64
+    },
+    "bags_mask-up_relu_6_1_output" : {
+      "k" : 96,
+      "w" : 2,
+      "n" : 1,
+      "h" : 2
+    },
+    "bags_mask-concatenate_3_output" : {
+      "k" : 96,
+      "w" : 32,
+      "n" : 1,
+      "h" : 32
+    },
+    "bags_mask-down_relu_6_1_output" : {
+      "k" : 96,
+      "w" : 4,
+      "n" : 1,
+      "h" : 4
+    },
+    "bags_mask-up_relu_1_0_output" : {
+      "k" : 24,
+      "w" : 64,
+      "n" : 1,
+      "h" : 64
+    },
+    "bags_mask-pool_0_output" : {
+      "k" : 16,
+      "w" : 128,
+      "n" : 1,
+      "h" : 128
+    },
+    "bags_mask-up_relu_2_0_output" : {
+      "k" : 32,
+      "w" : 32,
+      "n" : 1,
+      "h" : 32
+    },
+    "bags_mask-down_relu_5_1_output" : {
+      "k" : 80,
+      "w" : 8,
+      "n" : 1,
+      "h" : 8
+    },
+    "bags_mask-concatenate_0_output" : {
+      "k" : 32,
+      "w" : 256,
+      "n" : 1,
+      "h" : 256
+    },
+    "bags_mask-down_relu_3_0_output" : {
+      "k" : 48,
+      "w" : 32,
+      "n" : 1,
+      "h" : 32
+    },
+    "bags_mask-up_relu_3_0_output" : {
+      "k" : 48,
+      "w" : 16,
+      "n" : 1,
+      "h" : 16
+    },
+    "bags_mask-upsampling_4_output" : {
+      "k" : 64,
+      "w" : 16,
+      "n" : 1,
+      "h" : 16
+    },
+    "bags_mask-down_relu_2_0_output" : {
+      "k" : 32,
+      "w" : 64,
+      "n" : 1,
+      "h" : 64
+    },
+    "bags_mask-upsampling_0_output" : {
+      "k" : 16,
+      "w" : 256,
+      "n" : 1,
+      "h" : 256
+    },
+    "bags_mask-up_relu_4_0_output" : {
+      "k" : 64,
+      "w" : 8,
+      "n" : 1,
+      "h" : 8
+    },
+    "bags_mask-upsampling_6_output" : {
+      "k" : 96,
+      "w" : 4,
+      "n" : 1,
+      "h" : 4
+    },
+    "input1" : {
+      "k" : 4,
+      "w" : 256,
+      "n" : 1,
+      "h" : 256
+    },
+    "bags_mask-down_relu_1_0_output" : {
+      "k" : 24,
+      "w" : 128,
+      "n" : 1,
+      "h" : 128
+    },
+    "bags_mask-up_relu_5_0_output" : {
+      "k" : 80,
+      "w" : 4,
+      "n" : 1,
+      "h" : 4
+    },
+    "bags_mask-down_relu_4_1_output" : {
+      "k" : 64,
+      "w" : 16,
+      "n" : 1,
+      "h" : 16
+    },
+    "bags_mask-pool_6_output" : {
+      "k" : 96,
+      "w" : 2,
+      "n" : 1,
+      "h" : 2
+    },
+    "bags_mask-upsampling_2_output" : {
+      "k" : 32,
+      "w" : 64,
+      "n" : 1,
+      "h" : 64
+    },
+    "bags_mask-concatenate_1_output" : {
+      "k" : 48,
+      "w" : 128,
+      "n" : 1,
+      "h" : 128
+    },
+    "bags_mask-down_relu_3_1_output" : {
+      "k" : 48,
+      "w" : 32,
+      "n" : 1,
+      "h" : 32
+    },
+    "bags_mask-concatenate_4_output" : {
+      "k" : 128,
+      "w" : 16,
+      "n" : 1,
+      "h" : 16
+    },
+    "bags_mask-pool_5_output" : {
+      "k" : 80,
+      "w" : 4,
+      "n" : 1,
+      "h" : 4
+    },
+    "bags_mask-up_relu_0_1_output" : {
+      "k" : 16,
+      "w" : 128,
+      "n" : 1,
+      "h" : 128
+    },
+    "bags_mask-down_relu_2_1_output" : {
+      "k" : 32,
+      "w" : 64,
+      "n" : 1,
+      "h" : 64
+    },
+    "bags_mask-down_relu_0_0_output" : {
+      "k" : 16,
+      "w" : 256,
+      "n" : 1,
+      "h" : 256
+    },
+    "bags_mask-up_relu_6_0_output" : {
+      "k" : 96,
+      "w" : 2,
+      "n" : 1,
+      "h" : 2
+    },
+    "bags_mask-pool_4_output" : {
+      "k" : 64,
+      "w" : 8,
+      "n" : 1,
+      "h" : 8
+    }
+  }
+}

@@ -1,0 +1,226 @@
+{
+  "layer_shapes" : {
+    "face_full_maskupsampling_1_output" : {
+      "k" : 32,
+      "w" : 128,
+      "n" : 1,
+      "h" : 72
+    },
+    "face_full_maskdecoder_relu_1_0_output" : {
+      "k" : 32,
+      "w" : 64,
+      "n" : 1,
+      "h" : 36
+    },
+    "face_full_maskupsampling_2_output" : {
+      "k" : 48,
+      "w" : 64,
+      "n" : 1,
+      "h" : 36
+    },
+    "face_full_maskupsampling_3_output" : {
+      "k" : 64,
+      "w" : 32,
+      "n" : 1,
+      "h" : 18
+    },
+    "face_full_maskencoder_relu_2_0_output" : {
+      "k" : 48,
+      "w" : 64,
+      "n" : 1,
+      "h" : 36
+    },
+    "face_full_maskconcatenate_3_output" : {
+      "k" : 128,
+      "w" : 32,
+      "n" : 1,
+      "h" : 18
+    },
+    "face_full_maskdecoder_relu_2_1_output" : {
+      "k" : 48,
+      "w" : 32,
+      "n" : 1,
+      "h" : 18
+    },
+    "face_full_maskmiddle_relu_2_output" : {
+      "k" : 64,
+      "w" : 16,
+      "n" : 1,
+      "h" : 9
+    },
+    "output1" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "h" : 144
+    },
+    "face_full_maskencoder_relu_3_1_output" : {
+      "k" : 64,
+      "w" : 32,
+      "n" : 1,
+      "h" : 18
+    },
+    "face_full_maskdecoder_relu_0_0_output" : {
+      "k" : 16,
+      "w" : 128,
+      "n" : 1,
+      "h" : 72
+    },
+    "middle_concatenate_output" : {
+      "k" : 192,
+      "w" : 16,
+      "n" : 1,
+      "h" : 9
+    },
+    "face_full_maskencoder_relu_1_0_output" : {
+      "k" : 32,
+      "w" : 128,
+      "n" : 1,
+      "h" : 72
+    },
+    "face_full_maskconcatenate_1_output" : {
+      "k" : 64,
+      "w" : 128,
+      "n" : 1,
+      "h" : 72
+    },
+    "face_full_maskdecoder_relu_1_1_output" : {
+      "k" : 32,
+      "w" : 64,
+      "n" : 1,
+      "h" : 36
+    },
+    "face_full_maskmiddle_relu_0_output" : {
+      "k" : 64,
+      "w" : 16,
+      "n" : 1,
+      "h" : 9
+    },
+    "face_full_maskencoder_relu_2_1_output" : {
+      "k" : 48,
+      "w" : 64,
+      "n" : 1,
+      "h" : 36
+    },
+    "face_full_maskout_convolution_output" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "h" : 144
+    },
+    "face_full_maskmiddle_relu_3_output" : {
+      "k" : 64,
+      "w" : 16,
+      "n" : 1,
+      "h" : 9
+    },
+    "face_full_maskencoder_relu_0_0_output" : {
+      "k" : 16,
+      "w" : 256,
+      "n" : 1,
+      "h" : 144
+    },
+    "face_full_maskdecoder_relu_0_1_output" : {
+      "k" : 16,
+      "w" : 128,
+      "n" : 1,
+      "h" : 72
+    },
+    "face_full_maskdecoder_relu_3_0_output" : {
+      "k" : 64,
+      "w" : 16,
+      "n" : 1,
+      "h" : 9
+    },
+    "face_full_maskencoder_relu_1_1_output" : {
+      "k" : 32,
+      "w" : 128,
+      "n" : 1,
+      "h" : 72
+    },
+    "face_full_maskconcatenate_2_output" : {
+      "k" : 96,
+      "w" : 64,
+      "n" : 1,
+      "h" : 36
+    },
+    "input1" : {
+      "k" : 4,
+      "w" : 256,
+      "n" : 1,
+      "h" : 144
+    },
+    "face_full_maskmiddle_relu_1_output" : {
+      "k" : 64,
+      "w" : 16,
+      "n" : 1,
+      "h" : 9
+    },
+    "face_full_maskpool_0_output" : {
+      "k" : 16,
+      "w" : 128,
+      "n" : 1,
+      "h" : 72
+    },
+    "face_full_maskdecoder_relu_2_0_output" : {
+      "k" : 48,
+      "w" : 32,
+      "n" : 1,
+      "h" : 18
+    },
+    "face_full_maskencoder_relu_0_1_output" : {
+      "k" : 16,
+      "w" : 256,
+      "n" : 1,
+      "h" : 144
+    },
+    "face_full_maskpool_2_output" : {
+      "k" : 48,
+      "w" : 32,
+      "n" : 1,
+      "h" : 18
+    },
+    "face_full_maskencoder_relu_3_0_output" : {
+      "k" : 64,
+      "w" : 32,
+      "n" : 1,
+      "h" : 18
+    },
+    "face_full_maskdecoder_relu_3_1_output" : {
+      "k" : 64,
+      "w" : 16,
+      "n" : 1,
+      "h" : 9
+    },
+    "face_full_maskpool_1_output" : {
+      "k" : 32,
+      "w" : 64,
+      "n" : 1,
+      "h" : 36
+    },
+    "face_full_maskmiddle_relu_4_output" : {
+      "k" : 64,
+      "w" : 16,
+      "n" : 1,
+      "h" : 9
+    },
+    "face_full_maskconcatenate_0_output" : {
+      "k" : 32,
+      "w" : 256,
+      "n" : 1,
+      "h" : 144
+    },
+    "face_full_maskupsampling_0_output" : {
+      "k" : 16,
+      "w" : 256,
+      "n" : 1,
+      "h" : 144
+    },
+    "face_full_maskpool_3_output" : {
+      "k" : 64,
+      "w" : 16,
+      "n" : 1,
+      "h" : 9
+    }
+  }
+}

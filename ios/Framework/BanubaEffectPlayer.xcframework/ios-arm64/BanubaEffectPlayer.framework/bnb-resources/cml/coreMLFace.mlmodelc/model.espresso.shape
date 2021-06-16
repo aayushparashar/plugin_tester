@@ -1,0 +1,376 @@
+{
+  "layer_shapes" : {
+    "BN_down_0_1_output" : {
+      "k" : 4,
+      "w" : 256,
+      "n" : 1,
+      "h" : 256
+    },
+    "BN_down_4_1_output" : {
+      "k" : 64,
+      "w" : 16,
+      "n" : 1,
+      "h" : 16
+    },
+    "prelu_down_s4_output" : {
+      "k" : 64,
+      "w" : 8,
+      "n" : 1,
+      "h" : 8
+    },
+    "concat_prelu_ups_0_1_output" : {
+      "k" : 64,
+      "w" : 16,
+      "n" : 1,
+      "h" : 16
+    },
+    "up_sampling2d_75_output" : {
+      "k" : 8,
+      "w" : 256,
+      "n" : 1,
+      "h" : 256
+    },
+    "prelu_downs_4_1_output" : {
+      "k" : 64,
+      "w" : 16,
+      "n" : 1,
+      "h" : 16
+    },
+    "input1__fix__underflow_____conv2d_downs__0_1" : {
+      "k" : 3,
+      "w" : 256,
+      "n" : 1,
+      "h" : 256
+    },
+    "prelu_up_s2_output" : {
+      "k" : 64,
+      "w" : 8,
+      "n" : 1,
+      "h" : 8
+    },
+    "BN_down_s2_output" : {
+      "k" : 64,
+      "w" : 8,
+      "n" : 1,
+      "h" : 8
+    },
+    "concatenate_52_output" : {
+      "k" : 128,
+      "w" : 16,
+      "n" : 1,
+      "h" : 16
+    },
+    "up_sampling2d_74_output" : {
+      "k" : 16,
+      "w" : 128,
+      "n" : 1,
+      "h" : 128
+    },
+    "prelu_downs_2_1_output" : {
+      "k" : 16,
+      "w" : 64,
+      "n" : 1,
+      "h" : 64
+    },
+    "BN_up_s4_output" : {
+      "k" : 64,
+      "w" : 8,
+      "n" : 1,
+      "h" : 8
+    },
+    "prelu_down_s5_output" : {
+      "k" : 128,
+      "w" : 4,
+      "n" : 1,
+      "h" : 4
+    },
+    "up_sampling2d_73_output" : {
+      "k" : 32,
+      "w" : 64,
+      "n" : 1,
+      "h" : 64
+    },
+    "BN_down_1_1_output" : {
+      "k" : 8,
+      "w" : 128,
+      "n" : 1,
+      "h" : 128
+    },
+    "BN_down_5_1_output" : {
+      "k" : 128,
+      "w" : 8,
+      "n" : 1,
+      "h" : 8
+    },
+    "max_pooling2d_109_output" : {
+      "k" : 4,
+      "w" : 128,
+      "n" : 1,
+      "h" : 128
+    },
+    "prelu_downs_0_1_output" : {
+      "k" : 4,
+      "w" : 256,
+      "n" : 1,
+      "h" : 256
+    },
+    "concat_BN_up_1_1_output" : {
+      "k" : 32,
+      "w" : 32,
+      "n" : 1,
+      "h" : 32
+    },
+    "concatenate_54_output" : {
+      "k" : 48,
+      "w" : 64,
+      "n" : 1,
+      "h" : 64
+    },
+    "BN_up_s2_output" : {
+      "k" : 64,
+      "w" : 8,
+      "n" : 1,
+      "h" : 8
+    },
+    "up_sampling2d_72_output" : {
+      "k" : 64,
+      "w" : 32,
+      "n" : 1,
+      "h" : 32
+    },
+    "BN_down_s3_output" : {
+      "k" : 64,
+      "w" : 8,
+      "n" : 1,
+      "h" : 8
+    },
+    "input1" : {
+      "k" : 3,
+      "w" : 256,
+      "n" : 1,
+      "h" : 256
+    },
+    "prelu_up_s1_output" : {
+      "k" : 64,
+      "w" : 8,
+      "n" : 1,
+      "h" : 8
+    },
+    "prelu_down_s1_output" : {
+      "k" : 64,
+      "w" : 8,
+      "n" : 1,
+      "h" : 8
+    },
+    "prelu_up_s4_output" : {
+      "k" : 64,
+      "w" : 8,
+      "n" : 1,
+      "h" : 8
+    },
+    "concat_BN_up_3_1_output" : {
+      "k" : 8,
+      "w" : 128,
+      "n" : 1,
+      "h" : 128
+    },
+    "up_sampling2d_71_output" : {
+      "k" : 64,
+      "w" : 16,
+      "n" : 1,
+      "h" : 16
+    },
+    "BN_up_s0_output" : {
+      "k" : 64,
+      "w" : 4,
+      "n" : 1,
+      "h" : 4
+    },
+    "BN_down_2_1_output" : {
+      "k" : 16,
+      "w" : 64,
+      "n" : 1,
+      "h" : 64
+    },
+    "prelu_downs_5_1_output" : {
+      "k" : 128,
+      "w" : 8,
+      "n" : 1,
+      "h" : 8
+    },
+    "up_sampling2d_70_output" : {
+      "k" : 64,
+      "w" : 8,
+      "n" : 1,
+      "h" : 8
+    },
+    "BN_down_s4_output" : {
+      "k" : 64,
+      "w" : 8,
+      "n" : 1,
+      "h" : 8
+    },
+    "max_pooling2d_114_output" : {
+      "k" : 64,
+      "w" : 4,
+      "n" : 1,
+      "h" : 4
+    },
+    "prelu_downs_3_1_output" : {
+      "k" : 32,
+      "w" : 32,
+      "n" : 1,
+      "h" : 32
+    },
+    "prelu_down_s2_output" : {
+      "k" : 64,
+      "w" : 8,
+      "n" : 1,
+      "h" : 8
+    },
+    "max_pooling2d_113_output" : {
+      "k" : 64,
+      "w" : 8,
+      "n" : 1,
+      "h" : 8
+    },
+    "concat_BN_up_0_1_output" : {
+      "k" : 64,
+      "w" : 16,
+      "n" : 1,
+      "h" : 16
+    },
+    "max_pooling2d_112_output" : {
+      "k" : 32,
+      "w" : 16,
+      "n" : 1,
+      "h" : 16
+    },
+    "prelu_downs_1_1_output" : {
+      "k" : 8,
+      "w" : 128,
+      "n" : 1,
+      "h" : 128
+    },
+    "concatenate_53_output" : {
+      "k" : 96,
+      "w" : 32,
+      "n" : 1,
+      "h" : 32
+    },
+    "BN_up_s01_output" : {
+      "k" : 64,
+      "w" : 4,
+      "n" : 1,
+      "h" : 4
+    },
+    "BN_down_3_1_output" : {
+      "k" : 32,
+      "w" : 32,
+      "n" : 1,
+      "h" : 32
+    },
+    "prelu_up_s3_output" : {
+      "k" : 64,
+      "w" : 8,
+      "n" : 1,
+      "h" : 8
+    },
+    "prelu_up_s0_output" : {
+      "k" : 64,
+      "w" : 4,
+      "n" : 1,
+      "h" : 4
+    },
+    "BN_up_s3_output" : {
+      "k" : 64,
+      "w" : 8,
+      "n" : 1,
+      "h" : 8
+    },
+    "max_pooling2d_110_output" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "h" : 64
+    },
+    "max_pooling2d_111_output" : {
+      "k" : 16,
+      "w" : 32,
+      "n" : 1,
+      "h" : 32
+    },
+    "concat_prelu_ups_3_1_output" : {
+      "k" : 8,
+      "w" : 128,
+      "n" : 1,
+      "h" : 128
+    },
+    "concat_finalConv_output" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "h" : 256
+    },
+    "prelu_up_s01_output" : {
+      "k" : 64,
+      "w" : 4,
+      "n" : 1,
+      "h" : 4
+    },
+    "prelu_down_s3_output" : {
+      "k" : 64,
+      "w" : 8,
+      "n" : 1,
+      "h" : 8
+    },
+    "BN_down_s5_output" : {
+      "k" : 128,
+      "w" : 4,
+      "n" : 1,
+      "h" : 4
+    },
+    "concat_BN_up_2_1_output" : {
+      "k" : 16,
+      "w" : 64,
+      "n" : 1,
+      "h" : 64
+    },
+    "concat_prelu_ups_2_1_output" : {
+      "k" : 16,
+      "w" : 64,
+      "n" : 1,
+      "h" : 64
+    },
+    "BN_down_s1_output" : {
+      "k" : 64,
+      "w" : 8,
+      "n" : 1,
+      "h" : 8
+    },
+    "concatenate_55_output" : {
+      "k" : 24,
+      "w" : 128,
+      "n" : 1,
+      "h" : 128
+    },
+    "output1" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "h" : 256
+    },
+    "BN_up_s1_output" : {
+      "k" : 64,
+      "w" : 8,
+      "n" : 1,
+      "h" : 8
+    },
+    "concat_prelu_ups_1_1_output" : {
+      "k" : 32,
+      "w" : 32,
+      "n" : 1,
+      "h" : 32
+    }
+  }
+}

@@ -1,0 +1,2 @@
+configurations.maybeCreate("default")
+artifacts.add("default", file('banuba_effect_player-release.aar'))

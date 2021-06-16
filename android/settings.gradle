@@ -1,0 +1,3 @@
+include ':banuba_sdk-release'
+include ':banuba_effect_player-release'
+rootProject.name = 'agora_rtc_engine'
